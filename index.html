@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{--bg:#f7f3ed;--paper:#fcfaf6;--ink:#2b241e;--muted:#71675f;--line:#ddd3c6;--gold:#a98255;--gold-2:#cfb18b;--panel:#efe7dc;--shadow:0 22px 60px rgba(43,36,30,.10);--radius:28px;--serif:'Cormorant Garamond', serif;--sans:'Manrope', system-ui, sans-serif;}
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:linear-gradient(180deg,#faf7f2 0%, #f4eee6 100%);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased} img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button{font:inherit}
+*{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:100px} body{margin:0;background:linear-gradient(180deg,#faf7f2 0%, #f4eee6 100%);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased} img{display:block;max-width:100%} a{color:inherit;text-decoration:none} button{font:inherit}
 .shell{width:min(1180px, calc(100% - 40px)); margin:0 auto}
 .site-header{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(43,36,30,.06)}
 .topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:78px}
@@ -124,7 +124,7 @@
 </header>
 <div aria-hidden="true" class="mobile-menu" id="mobileMenu">
 <div class="mobile-overlay" id="mobileOverlay"></div>
-<div class="mobile-panel">
+<div class="mobile-panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
 <div class="mobile-head">
 <strong>MENU</strong>
 <button aria-label="Close menu" class="mobile-close" id="mobileClose">×</button>
@@ -230,8 +230,37 @@ const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobileClose = document.getElementById('mobileClose');
 const mobileOverlay = document.getElementById('mobileOverlay');
-function closeMenu(){mobileMenu.classList.remove('active'); mobileMenu.setAttribute('aria-hidden','true'); menuBtn?.setAttribute('aria-expanded','false')}
-function openMenu(){mobileMenu.classList.add('active'); mobileMenu.setAttribute('aria-hidden','false'); menuBtn?.setAttribute('aria-expanded','true')}
+let menuScroll = '';
+const menuBackground = [...document.querySelectorAll('.site-header, main, footer')];
+function closeMenu(){
+  if(!mobileMenu.classList.contains('active')) return;
+  mobileMenu.classList.remove('active');
+  menuBackground.forEach(el=>el.inert=false);
+  document.body.style.overflow=menuScroll;
+  menuBtn.setAttribute('aria-expanded','false');
+  menuBtn.focus();
+  mobileMenu.setAttribute('aria-hidden','true');
+}
+function openMenu(){
+  menuScroll=document.body.style.overflow;
+  mobileMenu.classList.add('active');
+  mobileMenu.setAttribute('aria-hidden','false');
+  menuBtn.setAttribute('aria-expanded','true');
+  document.body.style.overflow='hidden';
+  menuBackground.forEach(el=>el.inert=true);
+  mobileClose.focus();
+}
+document.addEventListener('keydown',event=>{
+  if(!mobileMenu.classList.contains('active')) return;
+  if(event.key==='Escape'){event.preventDefault();closeMenu();}
+  if(event.key==='Tab'){
+    const links=[...mobileMenu.querySelectorAll('button,a[href]')];
+    const first=links[0],last=links[links.length-1];
+    if(event.shiftKey && document.activeElement===first){event.preventDefault();last.focus();}
+    else if(!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
+  }
+});
+window.matchMedia('(min-width:761px)').addEventListener('change',event=>{if(event.matches)closeMenu();});
 menuBtn?.addEventListener('click', ()=> mobileMenu.classList.contains('active') ? closeMenu() : openMenu());
 mobileClose?.addEventListener('click', closeMenu); mobileOverlay?.addEventListener('click', closeMenu);
 document.querySelectorAll('.mobile-links a').forEach(a=>a.addEventListener('click', closeMenu));
@@ -239,18 +268,21 @@ document.querySelectorAll('.mobile-links a').forEach(a=>a.addEventListener('clic
 document.getElementById('year').textContent = new Date().getFullYear();
 const filterButtons=[...document.querySelectorAll('.filter-btn')];
 const cards=[...document.querySelectorAll('.product-card')];
+filterButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.classList.contains('active'))));
 filterButtons.forEach(btn=>btn.addEventListener('click',()=>{
-  filterButtons.forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+  filterButtons.forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false')}); btn.classList.add('active');btn.setAttribute('aria-pressed','true');
   const filter=btn.dataset.filter;
   cards.forEach(card=>{
     const show = filter==='all' || card.dataset.category===filter;
     card.style.display = show ? '' : 'none';
   });
 }));
+if ('IntersectionObserver' in window) {
 const observer = new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in'); observer.unobserve(entry.target)}})},{threshold:.14});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+} else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
 </script>
 <dialog aria-labelledby="detailTitle" class="product-dialog" id="productDialog"><button aria-label="Close details" class="dialog-close" id="dialogClose" type="button">×</button><div class="dialog-inner"><img alt="Selected stone product" id="detailImage"/><div class="dialog-copy"><span class="kicker">The A.Divine Collection</span><h2 id="detailTitle"></h2><p id="detailDescription"></p><p class="dialog-small">Product sizes, material variations, availability, and custom specifications can be discussed directly. Natural stone patterns differ from piece to piece.</p><div class="dialog-actions"><a class="button button-dark" href="#contact" id="detailContact">See contact details ↗</a></div></div></div></dialog><script>
-(function(){const dialog=document.getElementById('productDialog'), close=document.getElementById('dialogClose');document.querySelectorAll('.product-detail-link').forEach(btn=>btn.addEventListener('click',()=>{const c=btn.closest('.product-card');document.getElementById('detailImage').src=c.querySelector('img').src;document.getElementById('detailTitle').textContent=c.querySelector('h3').textContent;document.getElementById('detailDescription').textContent=c.querySelector('.product-body p').textContent;dialog.showModal()}));close.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});document.getElementById('detailContact').addEventListener('click',()=>dialog.close());document.querySelectorAll('[data-filter-menu]').forEach(a=>a.addEventListener('click',()=>{const target=document.querySelector('.filter-btn[data-filter="'+a.dataset.filterMenu+'"]');target?.click()}));})();
+(function(){const dialog=document.getElementById('productDialog'), close=document.getElementById('dialogClose');document.querySelectorAll('.product-detail-link').forEach(btn=>btn.addEventListener('click',()=>{const c=btn.closest('.product-card');document.getElementById('detailImage').src=c.querySelector('img').src;document.getElementById('detailImage').alt=c.querySelector('img').alt;document.getElementById('detailTitle').textContent=c.querySelector('h3').textContent;document.getElementById('detailDescription').textContent=c.querySelector('.product-body p').textContent;dialog.showModal()}));close.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});document.getElementById('detailContact').addEventListener('click',()=>dialog.close());document.querySelectorAll('[data-filter-menu]').forEach(a=>a.addEventListener('click',()=>{const target=document.querySelector('.filter-btn[data-filter="'+a.dataset.filterMenu+'"]');target?.click()}));})();
 </script></body>
 </html>
