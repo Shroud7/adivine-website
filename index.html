@@ -104,15 +104,30 @@
 @media (max-width: 760px){.desktop-nav{display:none} .menu-btn{display:block} .shell{width:min(100% - 28px,1180px)} .hero{padding-top:26px} .hero h1{font-size:60px} .hero p{font-size:15px} .hero-points{grid-template-columns:1fr} .section{padding:62px 0} .products-grid{grid-template-columns:1fr} .hero-card{min-height:440px} .floating-card{right:12px;left:12px;bottom:12px;max-width:none} .footer-inner{flex-direction:column;align-items:flex-start} }
 
 .brand-mark{font:600 15px/1 var(--serif);letter-spacing:-.06em}.hero h1{font-size:clamp(58px,7.4vw,88px);max-width:780px}.hero-card{height:650px;min-height:0}.hero-card img{height:100%;object-fit:cover}.story-factory{margin:0;position:relative;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);background:#dfd3c2;min-height:390px}.story-factory img{width:100%;height:100%;object-fit:cover;object-position:center}.story-factory figcaption{position:absolute;left:0;bottom:0;right:0;background:linear-gradient(transparent,rgba(24,20,15,.65));padding:50px 23px 20px;color:#fff;font-size:11px;letter-spacing:.15em}.story-second{margin-top:20px!important}.section-head h2 em,.bespoke-title em{font-weight:400;color:#8d775e}.product-card{transition:transform .25s,box-shadow .25s}.product-card:hover{transform:translateY(-3px);box-shadow:0 26px 62px rgba(43,36,30,.13)}.product-body p{min-height:92px}.product-detail-link{display:inline-flex;margin-top:16px;border:0;border-bottom:1px solid #a98255;padding:2px 0;background:transparent;color:#6c5132;cursor:pointer;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}.collection-disclaimer{max-width:860px;margin:25px 0 0;font-size:12px;line-height:1.7;color:var(--muted)}.bespoke-title{margin:0;font:600 clamp(42px,5vw,62px)/1 var(--serif)}.bespoke-lead{margin:18px 0 0;color:var(--muted);line-height:1.85}.bespoke-cta{margin-top:28px}.contact-card h3{font-size:35px}.product-dialog{border:0;padding:0;border-radius:28px;box-shadow:0 40px 120px rgba(15,12,10,.28);width:min(880px,calc(100vw - 28px));max-height:90vh;overflow:auto;background:#fbf8f3}.product-dialog::backdrop{background:rgba(28,22,18,.75);backdrop-filter:blur(4px)}.dialog-inner{display:grid;grid-template-columns:.9fr 1.1fr}.dialog-inner img{width:100%;height:100%;min-height:380px;max-height:620px;object-fit:cover;background:#ede5db}.dialog-copy{padding:44px 38px}.dialog-copy h2{margin:0 0 16px;font:600 clamp(34px,4vw,52px)/1 var(--serif)}.dialog-copy p{line-height:1.85;color:var(--muted)}.dialog-close{position:absolute;top:16px;right:16px;border:0;border-radius:50%;background:#fff;width:40px;height:40px;font-size:25px;cursor:pointer;box-shadow:var(--shadow)}.dialog-actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}.dialog-small{font-size:12px!important;border-top:1px solid #ddd3c6;margin-top:22px;padding-top:16px}.filter-btn:focus-visible,.button:focus-visible,.product-detail-link:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.mobile-links a{font-size:15px}.mobile-links a[data-filter-menu]{font-size:13px;color:#79634b;padding-left:16px}.footer-inner{letter-spacing:.02em}@media(max-width:760px){.hero h1{font-size:clamp(44px,13vw,64px)}.hero-card{height:490px;min-height:0}.floating-card{left:14px;right:14px;bottom:14px}.hero-points{grid-template-columns:1fr}.product-body p{min-height:0}.dialog-inner{grid-template-columns:1fr}.dialog-inner img{height:300px;min-height:0}.dialog-copy{padding:26px}.story-factory{min-height:300px}.section-head h2{font-size:clamp(40px,11vw,54px)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.product-media img{transition:none!important}}
+
+/* Refined layout, touch controls and restrained motion */
+:root{--shadow:0 12px 36px rgba(43,36,30,.065)}
+body{background:#faf7f2}.shell{width:min(1180px,calc(100% - 64px))}
+.brand{align-items:center}.brand-logo{width:232px;height:54px;object-fit:contain;mix-blend-mode:multiply}
+.topbar{min-height:86px}.section{padding:96px 0}.section-head{margin-bottom:40px}
+.hero{padding:64px 0 48px}.hero-grid{gap:48px}.hero-card{border-radius:8px 72px 8px 8px}
+.hero-points{gap:0;border-top:1px solid var(--line);padding-top:20px}.point{box-shadow:none;background:transparent;border:0;border-radius:0;padding:0 16px 0 0}.point+ .point{padding-left:16px;border-left:1px solid var(--line)}
+.floating-card{border-radius:8px;right:20px;bottom:20px}.button{min-height:48px;border-radius:4px;justify-content:center;transition:background .25s,color .25s,transform .25s,box-shadow .25s}.button-dark{box-shadow:none}.button-light{background:transparent;border-color:var(--line)}
+.story-grid{grid-template-columns:1fr;gap:32px}.story-card{padding:0;border:0;background:transparent;box-shadow:none;max-width:760px}.story-card h3{font-size:32px}.story-card p{max-width:720px}
+.factory-collage{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:260px 260px;gap:16px;margin-top:12px}.factory-shot{margin:0;position:relative;overflow:hidden;border-radius:6px;background:#d7cabb}.factory-main{grid-row:span 2}.factory-shot img{height:100%;width:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.65,.3,1),filter .8s}.factory-main img{object-position:center 45%}.factory-shot figcaption{position:absolute;inset:auto 0 0;padding:50px 24px 24px;background:linear-gradient(transparent,rgba(25,20,15,.74));color:#fff;font:500 27px/1.1 var(--serif)}.factory-shot figcaption span{display:block;font:600 10px/1.5 var(--sans);letter-spacing:.16em;margin-bottom:7px;color:#efe1cb}
+.product-card{border-radius:8px;box-shadow:none;border-color:#e7dfd4}.product-body{padding:24px}.product-body h3{font-size:31px}.product-body p{min-height:0;line-height:1.8}.product-tag{background:transparent;padding:0;font-size:10px;letter-spacing:.14em}.product-detail-link{min-height:44px;display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:20px;border-bottom:0;border-top:1px solid var(--line);padding-top:14px}.filter-btn{min-height:46px;font-size:13px}.filter-bar{gap:10px}
+.bespoke-box,.contact-box{border-radius:8px;box-shadow:none}.bespoke-copy{padding:40px}.contact-item,.contact-card{border-radius:6px}.menu-btn,.mobile-close,.dialog-close{min-width:44px;min-height:44px}.mobile-panel{overflow-y:auto;overscroll-behavior:contain}.mobile-links a{min-height:44px;display:flex;align-items:center}.mobile-links{gap:8px}.mobile-sub{margin-top:18px}
+a:focus-visible,button:focus-visible{outline:2px solid #8c663b;outline-offset:5px}.product-dialog{border-radius:10px;max-height:90dvh}.dialog-copy{padding:48px 32px 32px}.dialog-close{position:sticky;float:right;top:12px;margin:12px 12px -56px 0;z-index:2}.dialog-actions .button{width:100%}.reveal{transition:opacity .65s ease,transform .65s cubic-bezier(.2,.65,.3,1)}
+@media(hover:hover) and (pointer:fine){.button:hover{transform:translateY(-2px);background:#9a764f;color:#fff;box-shadow:0 8px 20px #2b241e16}.desktop-nav a:not(.nav-cta){position:relative}.desktop-nav a:not(.nav-cta)::after{content:'';position:absolute;left:0;right:0;bottom:-7px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s}.desktop-nav a:hover::after{transform:scaleX(1)}.factory-shot:hover img{transform:scale(1.035)}.product-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px #2b241e12}.product-detail-link:hover{color:#a98255}}
+@media(max-width:1024px){.hero-grid{gap:32px}.hero-card{height:520px}.factory-collage{grid-template-rows:230px 230px}}
+@media(max-width:760px){html{scroll-padding-top:86px}.shell{width:calc(100% - 36px)}.topbar{min-height:72px;gap:12px}.brand-logo{width:210px;height:auto}.hero{padding:30px 0 24px}.hero-grid{gap:26px}.hero h1{font-size:clamp(44px,12vw,60px);line-height:1.02;margin-bottom:20px}.eyebrow{font-size:9px;letter-spacing:.12em;line-height:1.7;gap:8px}.eyebrow::before{width:22px;flex:none}.hero p{font-size:15px;line-height:1.8;margin-bottom:22px}.hero-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:24px}.button{font-size:13px;padding:14px 16px;min-height:48px}.hero-points{grid-template-columns:1fr;gap:12px;padding-top:16px}.point,.point+.point{padding:0;border:0;display:grid;grid-template-columns:130px 1fr;gap:10px}.point strong{font-size:12px}.point span{font-size:12px}.hero-card{height:390px;border-radius:6px 44px 6px 6px}.floating-card{padding:14px 16px;left:14px;right:14px;bottom:14px}.floating-card p{font-size:12px;line-height:1.6;margin:0}.floating-card span{font-size:9px}.section,.contact-section{padding:56px 0}.section-head{gap:20px;margin-bottom:28px}.section-head h2{font-size:43px;line-height:1.04}.section-head p,.story-card p{font-size:14px;line-height:1.85}.story-card h3{font-size:29px}.story-grid{gap:22px}.factory-collage{grid-template-columns:1fr 1fr;grid-template-rows:340px 210px;gap:10px;margin-top:0}.factory-main{grid-column:span 2;grid-row:auto}.factory-shot figcaption{padding:35px 13px 16px;font-size:20px}.factory-shot figcaption span{font-size:8px;letter-spacing:.1em}.filter-bar{display:grid;grid-template-columns:1fr 1fr;gap:8px}.filter-btn{padding:10px 8px;font-size:12px}.products-grid{gap:22px}.product-media{aspect-ratio:1/1}.product-body{padding:22px}.product-body h3{font-size:30px}.product-body p{font-size:14px}.bespoke-copy,.contact-box{padding:24px}.bespoke-title{font-size:43px}.bespoke-lead,.bespoke-copy li{font-size:14px}.bespoke-visual{max-height:380px}.contact-card{padding:20px}.contact-card h3{font-size:29px}.contact-item{padding:16px}.dialog-inner img{height:260px}.dialog-copy{padding:26px 22px}.dialog-copy h2{font-size:36px}.footer{padding:22px 0}.footer-inner{font-size:11px;gap:12px}.product-card:hover{transform:none;box-shadow:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <header class="site-header">
 <div class="shell topbar">
-<a class="brand" href="#top">
-<span class="brand-mark">AD</span>
-<span class="brand-wording"><strong>A.DIVINE</strong><span>Marble Manufacturing &amp; Design</span></span>
-</a>
+<a class="brand" href="#top" aria-label="A.Divine home"><img class="brand-logo" src="assets/logo.webp" width="232" height="54" alt="A.Divine — Marble Manufacturing &amp; Design"></a>
 <nav aria-label="Primary" class="desktop-nav">
 <a href="#about">About</a>
 <a href="#collection">Collection</a>
@@ -147,75 +162,75 @@
 <p>Discover a world of thoughtfully designed marble and onyx — from sculptural home décor to personal keepsakes and bespoke creations. Rooted in craftsmanship, shaped around your vision.</p>
 <div class="hero-actions"><a class="button button-dark" href="#collection">Explore the collection ↗</a><a class="button button-light" href="#bespoke">Our bespoke approach ↗</a></div>
 <div class="hero-points"><div class="point"><strong>Home Décor</strong><span>Objects made to elevate the everyday.</span></div><div class="point"><strong>Urns &amp; Keepsakes</strong><span>Distinctive stone forms, beautifully finished.</span></div><div class="point"><strong>Direct Manufacturing</strong><span>Custom designs crafted at the source.</span></div></div></div>
-<div class="hero-visual"><div class="hero-card"><img alt="Marble and onyx chess set in a refined interior" fetchpriority="high" height="1402" src="assets/chess.png" width="1122"/></div><div class="floating-card"><span>Designed in stone</span><p>More than a collection. An invitation to imagine what marble can become.</p></div></div></div></section>
+<div class="hero-visual"><div class="hero-card"><img alt="Marble and onyx chess set in a refined interior" fetchpriority="high" height="1402" src="assets/chess.webp" width="1122"/></div><div class="floating-card"><span>Designed in stone</span><p>More than a collection. An invitation to imagine what marble can become.</p></div></div></div></section>
 <section class="section" id="about"><div class="shell">
 <div class="section-head reveal"><div><span class="kicker">01 / Our Foundation</span><h2>Rooted in heritage.<br/><em>Crafted for what’s next.</em></h2></div><p>A.Divine is built on more than two decades of family experience in Pakistan’s natural stone industry. Today, that foundation inspires a fresh, design-led vision for marble and onyx.</p></div>
 <div class="story-grid"><article class="story-card reveal"><h3>Knowledge passed through generations.</h3><p>Our background spans natural stone sourcing, manufacturing, and working with marble and onyx for international markets. This close understanding of the material informs everything we create — from polished decorative objects to thoughtful, custom commissions.</p><p class="story-second">We believe the most memorable pieces begin with two things: the character of the stone and the imagination of the person who chooses it.</p></article>
-<figure class="story-factory reveal"><img alt="Marble blocks at the family's natural-stone facility" loading="lazy" src="assets/factory-clean.png"/><figcaption>AT THE SOURCE — OUR MARBLE WORKSHOP</figcaption></figure></div></div></section>
+<div class="factory-collage reveal" aria-label="Inside our stone workshop"><figure class="factory-shot factory-main"><img src="assets/factory-craft.webp" alt="Stone cutting machine and craftsman in the family workshop" width="800" height="1060" loading="lazy" decoding="async"><figcaption><span>01 / THE WORKSHOP</span>Where the work begins.</figcaption></figure><figure class="factory-shot"><img src="assets/factory-stone.webp" alt="Raw stone blocks with a polished stone sample" width="600" height="800" loading="lazy" decoding="async"><figcaption><span>02 / THE MATERIAL</span>Character in every layer.</figcaption></figure><figure class="factory-shot"><img src="assets/factory-yard.webp" alt="Marble and onyx blocks in the stone yard" width="600" height="800" loading="lazy" decoding="async"><figcaption><span>03 / AT THE SOURCE</span>From block to possibility.</figcaption></figure></div></div></div></section>
 <section class="section" id="collection"><div class="shell"><div class="section-head reveal"><div><span class="kicker">02 / The Collection</span><h2>Marble beyond<br/><em>the ordinary.</em></h2></div><p>Explore marble home décor, sculptural accents, urns, and mini keepsakes. Each category reflects what can be achieved through natural stone, considered form, and skilled manufacturing.</p></div>
 <div class="filter-bar reveal"><button class="filter-btn active" data-filter="all" type="button">All Collections</button><button class="filter-btn" data-filter="decor" type="button">Home Décor</button><button class="filter-btn" data-filter="urns" type="button">Urns</button><button class="filter-btn" data-filter="keepsakes" type="button">Mini Keepsakes</button></div>
 <div class="products-grid" id="productGrid">
 <article class="product-card reveal" data-category="decor">
-<div class="product-media"><img alt="Chess Sets" decoding="async" loading="lazy" src="assets/chess.png"/></div>
+<div class="product-media"><img alt="Chess Sets" decoding="async" loading="lazy" src="assets/chess.webp"/></div>
 <div class="product-body">
 <span class="product-tag">Home Décor</span>
 <h3>Chess Sets</h3>
-<p>A statement piece for play and display. Our marble chess sets bring together contrasting natural stones, individually carved forms, and polished finishes. Ask about custom dimensions and stone combinations.</p>
+<p>A chess set worth leaving on the table. Contrasting stone brings the board and carved pieces together, with natural markings that make each set its own.</p>
 <button aria-label="View details of Chess Sets" class="product-detail-link" type="button">View details ↗</button></div>
 </article>
 <article class="product-card reveal" data-category="decor">
-<div class="product-media"><img alt="Sculptural Vases" decoding="async" loading="lazy" src="assets/vase.png"/></div>
+<div class="product-media"><img alt="Sculptural Vases" decoding="async" loading="lazy" src="assets/vase.webp"/></div>
 <div class="product-body">
 <span class="product-tag">Home Décor</span>
 <h3>Sculptural Vases</h3>
-<p>Sculptural vases shaped from marble and onyx. Natural bands, fine veining, and carefully polished silhouettes make every stone expression unique.</p>
+<p>The shape is simple; the stone does the talking. These vases bring natural colour and movement to a shelf, console or quiet corner of a room.</p>
 <button aria-label="View details of Sculptural Vases" class="product-detail-link" type="button">View details ↗</button></div>
 </article>
 <article class="product-card reveal" data-category="decor">
-<div class="product-media"><img alt="Candleholders" decoding="async" loading="lazy" src="assets/candleholders.png"/></div>
+<div class="product-media"><img alt="Candleholders" decoding="async" loading="lazy" src="assets/candleholders.webp"/></div>
 <div class="product-body">
 <span class="product-tag">Home Décor</span>
 <h3>Candleholders</h3>
-<p>Marble candleholders for considered interior styling — understated in form, tactile in finish, and beautiful alone or arranged as a set.</p>
+<p>A little height and warmth for the table. Display these stone candleholders on their own or group them together for a more generous arrangement.</p>
 <button aria-label="View details of Candleholders" class="product-detail-link" type="button">View details ↗</button></div>
 </article>
 <article class="product-card reveal" data-category="decor">
-<div class="product-media"><img alt="Fruit Bowls" decoding="async" loading="lazy" src="assets/fruit-bowl.png"/></div>
+<div class="product-media"><img alt="Fruit Bowls" decoding="async" loading="lazy" src="assets/fruit-bowl.webp"/></div>
 <div class="product-body">
 <span class="product-tag">Home Décor</span>
 <h3>Fruit Bowls</h3>
-<p>Sculpted stone bowls that bring warmth and visual interest to dining tables, consoles, and curated interiors. Finishes and shapes can be tailored to a brief.</p>
+<p>A broad stone bowl with a softly curved profile. Use it as the centrepiece of a dining table or leave it empty to enjoy the grain of the stone.</p>
 <button aria-label="View details of Fruit Bowls" class="product-detail-link" type="button">View details ↗</button></div>
 </article>
 <article class="product-card reveal" data-category="decor">
-<div class="product-media"><img alt="Coaster Sets" decoding="async" loading="lazy" src="assets/coasters.png"/></div>
+<div class="product-media"><img alt="Coaster Sets" decoding="async" loading="lazy" src="assets/coasters.webp"/></div>
 <div class="product-body">
 <span class="product-tag">Home Décor</span>
 <h3>Coaster Sets</h3>
-<p>Polished marble coaster sets designed for memorable tablescapes, thoughtful gifts, and hospitality spaces. Each piece celebrates the natural movement of stone.</p>
+<p>Small pieces with plenty of character. These marble coasters add a natural detail to the table and make a thoughtful gift as a set.</p>
 <button aria-label="View details of Coaster Sets" class="product-detail-link" type="button">View details ↗</button></div>
 </article>
 <article class="product-card reveal" data-category="urns">
-<div class="product-media"><img alt="Signature Urns" decoding="async" loading="lazy" src="assets/signature-urns.png"/></div>
+<div class="product-media"><img alt="Signature Urns" decoding="async" loading="lazy" src="assets/signature-urns.webp"/></div>
 <div class="product-body">
 <span class="product-tag">Urns</span>
 <h3>Signature Urns</h3>
-<p>Elegant urns in marble and onyx, crafted in considered shapes with natural colour and veining. Discuss preferred sizes, materials, and finishing details.</p>
+<p>Marble and onyx urns with rounded forms and carefully finished surfaces. Choose a stone and shape that feels right; size and finish can be discussed with us.</p>
 <button aria-label="View details of Signature Urns" class="product-detail-link" type="button">View details ↗</button></div>
 </article>
 <article class="product-card reveal" data-category="keepsakes">
-<div class="product-media"><img alt="Mini Keepsakes" decoding="async" loading="lazy" src="assets/mini-keepsakes.png"/></div>
+<div class="product-media"><img alt="Mini Keepsakes" decoding="async" loading="lazy" src="https://shroud7.github.io/adivine-website/assets/mini-keepsakes.png"/></div>
 <div class="product-body">
 <span class="product-tag">Keepsakes</span>
 <h3>Mini Keepsakes</h3>
-<p>A collection of compact, beautifully polished natural-stone keepsakes. Shown in soft white and blue-banded onyx, with subtle variations that make each piece personal.</p>
+<p>Small keepsakes for something deeply personal. Soft bands of colour run through each stone, giving every piece a character of its own.</p>
 <button aria-label="View details of Mini Keepsakes" class="product-detail-link" type="button">View details ↗</button></div>
 </article>
 </div>
 <p class="collection-disclaimer">Product imagery includes design concepts and enhanced presentations. Natural veining and colour may vary; specifications and availability can be discussed directly.</p></div></section>
 <section class="section" id="bespoke"><div class="shell bespoke-wrap"><div class="bespoke-box bespoke-copy reveal"><span class="kicker">03 / Bespoke Design</span><h2 class="bespoke-title">Your vision.<br/><em>Our craftsmanship.</em></h2>
 <p class="bespoke-lead">Being a direct-source manufacturer gives A.Divine the flexibility to translate a design brief into a distinctive stone creation, with close attention to material, dimensions, detailing, and finish.</p>
-<ul><li><span>1</span><div><strong>Share your idea</strong><br/>Tell us the form, purpose, dimensions, and finish you have in mind.</div></li><li><span>2</span><div><strong>Shape the details</strong><br/>Explore materials, technical considerations, and design options with our team.</div></li><li><span>3</span><div><strong>Craft at the source</strong><br/>From approved specifications to finished stone, we keep craftsmanship at the heart of the process.</div></li></ul><a class="button button-dark bespoke-cta" href="#contact">Discuss a custom creation ↗</a></div><div class="bespoke-box bespoke-visual reveal"><img alt="Collection of blue and white natural stone mini keepsakes" loading="lazy" src="assets/stone-collection.png"/></div></div></section>
+<ul><li><span>1</span><div><strong>Share your idea</strong><br/>Tell us the form, purpose, dimensions, and finish you have in mind.</div></li><li><span>2</span><div><strong>Shape the details</strong><br/>Explore materials, technical considerations, and design options with our team.</div></li><li><span>3</span><div><strong>Craft at the source</strong><br/>From approved specifications to finished stone, we keep craftsmanship at the heart of the process.</div></li></ul><a class="button button-dark bespoke-cta" href="#contact">Discuss a custom creation ↗</a></div><div class="bespoke-box bespoke-visual reveal"><img alt="Collection of blue and white natural stone mini keepsakes" loading="lazy" src="https://shroud7.github.io/adivine-website/assets/stone-collection.png"/></div></div></section>
 <section class="contact-section" id="contact"><div class="shell"><div class="section-head reveal"><div><span class="kicker">04 / Get in Touch</span><h2>Let’s create<br/><em>something distinctive.</em></h2></div><p>For product enquiries, wholesale discussions, and bespoke marble projects, our team will be pleased to assist. Contact channels will be published here once confirmed.</p></div>
 <div class="contact-box reveal"><div class="contact-grid"><div class="contact-card"><span class="kicker">A.Divine</span><h3>Marble Manufacturing &amp; Design</h3><p>Bringing together natural stone expertise, design, and direct manufacturing to create pieces with lasting character.</p><p class="note">Pakistan · Enquiries from around the world welcome</p></div><div class="contact-list"><div class="contact-item"><strong>Email</strong><span>Contact email to be announced</span></div><div class="contact-item"><strong>Phone / WhatsApp</strong><span>Contact number to be announced</span></div><div class="contact-item"><strong>Business enquiries</strong><span>Product collections · bespoke design · wholesale</span></div></div></div></div></div></section>
 </main>
